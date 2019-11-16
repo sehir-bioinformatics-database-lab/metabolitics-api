@@ -1,16 +1,17 @@
 import os
 import datetime
+from dotenv import load_dotenv
+load_dotenv()
 
 
 class BaseConfig:
-    SQLALCHEMY_DATABASE_URI = 'postgresql://%s:%s@%s/%s' % (
-        os.getenv('POSTGRES_USER', 'postgres'),
-        os.getenv('POSTGRES_PASSWORD', ''),
-        os.getenv('POSTGRES_ADDRESS', 'localhost'),
-        os.getenv('POSTGRES_DB', 'postgres'))
+    # SQLALCHEMY_DATABASE_URI = 'postgresql://%s:%s@%s/%s' % (
+    #     os.getenv('POSTGRES_USER', 'postgres'),
+    #     os.getenv('POSTGRES_PASSWORD', ''),
+    #     os.getenv('POSTGRES_ADDRESS', 'localhost'),
+    #     os.getenv('POSTGRES_DB', 'postgres'))
+    SQLALCHEMY_DATABASE_URI = 'postgresql://biodblab:biodb+6859@db/AppDb'
 
-    # SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:boss123@localhost/metabol'
-    # 'postgresql://postgres:boss123@localhost/analysis2'
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     JWT_EXPIRATION_DELTA = datetime.timedelta(days=25)

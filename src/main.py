@@ -37,9 +37,9 @@ def run_api():
 
 @cli.command()
 def run_celery():
-    # call('celery -A app.celery worker')
+    call('celery -A app.celery worker')
     # celery4 = make_celery(app)
-    call('celery -A app.celery2.celery worker -l info -Q celery')
+    # call('celery -A app.celery2.celery worker -l info -Q celery')
 
     # call('celery --app =app worker --loglevel=info')
     # make_celery(app)
